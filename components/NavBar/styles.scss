@@ -1,0 +1,28 @@
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 35px;
+  width: 15vw;
+  z-index: 2;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+}
+.nav-link {
+  color: black;
+  font-size: 80px;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px 0px;
+  text-transform: uppercase;
+  padding: 0px;
+}
+.link-first {
+  margin-top: 0px;
+}
+.nav-link:hover {
+  color: black;
+  text-decoration: underline;
+}

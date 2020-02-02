@@ -1,0 +1,35 @@
+header {
+  margin: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  max-width: 50px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.5s;
+}
+.logo:hover {
+  opacity: 0.3;
+}
+.header-title {
+  margin-left: 248px;
+  user-select: none;
+}
+.header-links {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-link {
+  color: black;
+  text-decoration: none;
+}
+.header-link:hover {
+  text-decoration: underline;
+}

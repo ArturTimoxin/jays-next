@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+  font-family: Ubuntu Mono, monospace;
+}
+body {
+  margin: 0;
+  position: relative;
+}
+.wrap-content {
+  display: flex;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
