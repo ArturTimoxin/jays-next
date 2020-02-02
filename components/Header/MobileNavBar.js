@@ -3,7 +3,6 @@ import Link from "next/link";
 import logoMiniBlack from "../../assets/img/jays-logo-mini-black.png";
 
 const MobileNavBar = ({ isShowMenu = false, closeMenu, linksInfo = [] }) => {
-    console.log('isShowMenu', isShowMenu)
   return (
     <div className={`menuBar ${isShowMenu ? "open" : ""}`}>
       <div className="wrapperInfoMenuBar">

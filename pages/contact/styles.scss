@@ -1,33 +1,49 @@
-.wrapContact {
+.wrap-contact {
   width: calc(85vw - 50px);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 .wrapContactForm {
   width: 80%;
   margin: 50px auto;
   display: flex;
   justify-content: center;
-  font-family: Verdana, sans-serif;
-  margin-bottom: 10vh;
+  @media screen and (max-width: 768px) {
+    margin: 20px auto;
+  }
+  @media screen and (max-width: 500px) {
+    margin: 0px auto;
+  }
 }
 #contactForm {
   display: flex;
   flex-direction: column;
   width: 40%;
-  @media screen and (max-width: 800px) {
-    width: 60%;
+  @media screen and (max-width: 1500px) {
+    width: 70%;
   }
-  @media screen and (max-width: 500px) {
-    width: 90%;
+  @media screen and (max-width: 1366px) {
+    width: 55%;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
   }
 }
 .contact-form-label {
   margin-top: 40px;
   font-size: 20px;
   font-weight: 400;
+  @media screen and (max-width: 600px) {
+    margin-top: 20px;
+  }
 }
 .contact-form-label:first-child {
   margin-top: 0px;
@@ -65,4 +81,10 @@
 }
 .sendResult {
   text-align: center;
+}
+
+.page-section-tilte {
+  @media screen and (max-width: 320px) {
+    font-size: 30px;
+  }
 }

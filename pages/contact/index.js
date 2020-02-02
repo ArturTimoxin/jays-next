@@ -27,8 +27,8 @@ const Contact = () => {
 
   return (
     <>
-      <div className="wrapContact">
-        <h1 className="page-section-text">Контактна форма</h1>
+      <div className="wrap-contact">
+        <h1 className="page-section-tilte">Контактна форма</h1>
         <div className="wrapContactForm">
           <form onSubmit={sendMessage} id="contactForm">
             <label className="contact-form-label" htmlFor="name">

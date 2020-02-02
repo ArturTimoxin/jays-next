@@ -36,6 +36,9 @@ class Locations extends Component {
                 pointName={elem.pointName}
               />
             ))}
+            {points.length % 2 && (
+              <div className='location-empty-block-for-wrap'/>
+            )}
           </div>
         </div>
       </div>

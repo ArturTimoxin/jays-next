@@ -5,14 +5,19 @@ import NavBar from "../NavBar";
 import MessageModal from "../MessageModal";
 import { closeMessageModal } from "../../actions/messageModal";
 import { connect } from "react-redux";
+import { withRouter } from "next/router";
 
 const Layout = ({
   children,
   closeMessageModalAction,
   isShowMessageModal,
   titleMessageeModal,
-  textMessageModal
+  textMessageModal,
+  router,
 }) => {
+
+  const isMainPage = router.route === '/';
+
   return (
     <>
       <Head>
@@ -32,7 +37,7 @@ const Layout = ({
         <Header />
         <div className="wrap-content">
           <NavBar />
-          <main>{children}</main>
+          <main className={isMainPage ? '' : 'main-top-margin'}>{children}</main>
         </div>
       </div>
       <MessageModal
@@ -57,4 +62,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Layout));

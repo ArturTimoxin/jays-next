@@ -1,5 +1,8 @@
 .wrap-locations {
   width: calc(85vw - 40px);
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 .mapWrapper {
   width: 100%;
@@ -10,6 +13,9 @@
 #map {
   width: 95%;
   height: 100%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 .wrapperLocationsItems {
   margin-left: 5%;
@@ -30,4 +36,12 @@
 }
 .pointAddress {
   font-size: 14px;
+}
+.location-empty-block-for-wrap {
+  width: 200px;
+  margin-top: 20px;
+  margin-right: 35px;
+  @media screen and (max-width: 1024px) {
+    width: 150px;
+  }
 }

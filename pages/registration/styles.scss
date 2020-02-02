@@ -4,16 +4,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 768px){
+      width: 100%;
+  }
 }
 .title-registration {
   margin-top: 10px;
   font-size: 37px;
+  @media screen and (max-width: 1000px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 16px;
+  }
 }
 #registrationForm {
   display: flex;
   flex-direction: column;
   width: 40%;
   margin-top: 40px;
+  @media screen and (max-width: 1500px){
+    width: 50%;
+  }
+  @media screen and (max-width: 1366px){
+    width: 60%;
+  }
+  @media screen and (max-width: 600px){
+    margin-top: 20px;
+    width: 80%;
+  }
 }
 label {
   margin: 0px;
@@ -37,6 +59,9 @@ label {
   border-radius: 2px;
   transition: all 0.4s;
   outline: none;
+  @media screen and (max-width: 768px){
+    margin: 20px 0px 10px 0px;
+  }
 }
 #registerSubmitBtn:hover {
   color: black;
@@ -48,6 +73,9 @@ label {
 .rewards-link {
   font-size: 20px;
   text-align: center;
+  @media screen and (max-width: 1366px){
+    margin: 20px 0px;
+  }
 }
 .phoneError {
   color: red;

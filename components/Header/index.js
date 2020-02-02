@@ -3,18 +3,21 @@ import Logo from "../../assets/img/jays-logo-black.png";
 import Link from "next/link";
 import MiniLogoBtn from "./MiniLogoBtn";
 import MobileNavBar from "./MobileNavBar";
+import { withRouter } from "next/router";
+
 const linksInfo = [
   { link: "/locations", name: "Локації" },
   { link: "/rewards", name: "Rewards" },
   { link: "/contact", name: "Контакт" }
 ];
 
-const Header = () => {
+const Header = ({ router }) => {
   const [isShowMobileNavBar, setShowMobileNavBar] = useState(false);
-
+  const isMainPage = router.route === '/';
+  
   return (
     <>
-      <header>
+      <header className={isMainPage ? '' : 'white-bg'}>
         <div className="logo-wrap">
           <Link passHref href="/">
             <a>
@@ -24,7 +27,7 @@ const Header = () => {
           <MiniLogoBtn showMobileNavBar={() => setShowMobileNavBar(true)} />
           <span className="header-title">JAYS : COFFEE BREWERS</span>
         </div>
-        <span className="header-links">
+        <span className={`header-links ${isMainPage ? '' : 'black-links'}`}>
           <a
             className="header-link"
             href="https://www.facebook.com/jayscoffeebrewers/"
@@ -48,4 +51,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

@@ -13,4 +13,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.main-top-margin {
+  @media screen and (max-width: 768px) {
+    margin-top: 70px;
+  }
 }

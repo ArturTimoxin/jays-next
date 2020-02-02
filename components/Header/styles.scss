@@ -13,6 +13,13 @@ header {
     z-index: 2;
   }
 }
+
+.white-bg {
+  @media screen and (max-width: 768px) {
+    background-color: #FFFFFF;
+  }
+}
+
 .logo-wrap {
   display: flex;
   align-items: center;
@@ -47,21 +54,25 @@ header {
   @media screen and (max-width: 1200px){
     margin-left: 150px;
   }
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 768px){
     display: none;
   }
 }
 .header-links {
+  color: black;
   width: 70px;
   display: flex;
   justify-content: space-between;
-}
-.header-link {
-  color: black;
-  text-decoration: none;
   @media screen and (max-width: 768px){
     color: #FFFFFF;
   }
+  &.black-links {
+    color: black;
+  }
+}
+.header-link {
+  text-decoration: none;
+  color: inherit;
 }
 .header-link:hover {
   text-decoration: underline;
