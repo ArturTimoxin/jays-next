@@ -1,6 +1,15 @@
+// COMPONENTS STYLE INPORT
 @import '../components/Layout/styles.scss';
 @import '../components/BonusesModal/styles.scss';
 @import '../components/Header/styles.scss';
 @import '../components/LocationItem/styles.scss';
 @import '../components/MessageModal/styles.scss';
 @import '../components/NavBar/styles.scss';
+
+// PAGES STYLE IMPORT
+@import '../pages/main-page-styles.scss';
+@import '../pages/contact/styles.scss';
+@import '../pages/locations/styles.scss';
+@import '../pages/point/styles.scss';
+@import '../pages/registration/styles.scss';
+@import '../pages/rewards/styles.scss';

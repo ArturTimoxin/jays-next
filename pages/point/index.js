@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import Styles from "./styles";
 import { getPointData } from "../../actions/point";
 import LocationItem from '../../components/LocationItem';
 
@@ -80,7 +79,6 @@ const Point = props => {
           </div>
         </div>
       </div>
-      <Styles />
     </>
   );
 };

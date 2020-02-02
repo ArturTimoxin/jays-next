@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Styles from "./styles";
 import MaskedInput from "react-text-mask";
 import Link from "next/link";
 import { maskPhone } from "../../constants/InputMasks";
@@ -146,7 +145,6 @@ const Registration = ({ showMessageModalAction }) => {
           </Link>
         </form>
       </div>
-      <Styles />
     </>
   );
 };

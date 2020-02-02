@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Styles from "./style";
 import API from "../../utils/api";
 
 const Contact = () => {
@@ -22,7 +21,7 @@ const Contact = () => {
       })
       .catch(e => {
         setLoading(false);
-        setSendResult('Помилка відправки даних');
+        setSendResult("Помилка відправки даних");
       });
   };
 
@@ -32,8 +31,11 @@ const Contact = () => {
         <h1 className="page-section-text">Контактна форма</h1>
         <div className="wrapContactForm">
           <form onSubmit={sendMessage} id="contactForm">
-            <label htmlFor="name">Ваше ім'я:</label>
+            <label className="contact-form-label" htmlFor="name">
+              Ваше ім'я:
+            </label>
             <input
+              className="contact-form-input"
               type="text"
               name="name"
               id="name"
@@ -41,8 +43,11 @@ const Contact = () => {
               required
               onChange={e => setName(e.target.value)}
             />
-            <label htmlFor="email">Ваш e-mail:</label>
+            <label className="contact-form-label" htmlFor="email">
+              Ваш e-mail:
+            </label>
             <input
+              className="contact-form-input"
               type="email"
               name="email"
               id="email"
@@ -50,9 +55,11 @@ const Contact = () => {
               required
               onChange={e => setEmail(e.target.value)}
             />
-            <label htmlFor="message">Ваше повідомлення:</label>
+            <label className="contact-form-label" htmlFor="message">
+              Ваше повідомлення:
+            </label>
             <textarea
-              id="message"
+              id="contact-form-message"
               name="message"
               rows="5"
               value={message}
@@ -66,7 +73,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <Styles />
     </>
   );
 };

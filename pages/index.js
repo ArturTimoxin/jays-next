@@ -1,6 +1,5 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import Styles from './main-page-styles';
 
 const slides = [
   {
@@ -38,7 +37,6 @@ const HomePage = () => {
           )
         })}
       </Carousel>
-      <Styles />
     </div>
   );
 };

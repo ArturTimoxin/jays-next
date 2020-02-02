@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Styles from "./styles";
 import { TOGGLE_LOCATIONS_MENU } from "../../constants";
 import { getLocationsAndSetMap, getLocations } from "../../actions/locations";
 import LocationItem from "../../components/LocationItem";
-
 class Locations extends Component {
   componentDidMount() {
     this.props.getLocationsAndSetMap(this.map);
@@ -40,7 +38,6 @@ class Locations extends Component {
             ))}
           </div>
         </div>
-        <Styles />
       </div>
     );
   }

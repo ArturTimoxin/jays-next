@@ -5,7 +5,6 @@ import NavBar from "../NavBar";
 import MessageModal from "../MessageModal";
 import { closeMessageModal } from "../../actions/messageModal";
 import { connect } from "react-redux";
-import '../../styles/index.scss';
 
 const Layout = ({
   children,

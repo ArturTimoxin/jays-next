@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import App from "next/app";
 import Layout from "../components/Layout";
 import withRedux from "next-redux-wrapper";
-
+import '../styles/index.scss';
 class Jays extends App {
     
     static async getInitialProps({Component, ctx}) {

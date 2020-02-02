@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import MaskedInput from "react-text-mask";
-import Styles from "./style";
 import Link from "next/link";
 import { maskPhone } from "../../constants/InputMasks";
 import BonusesModal from "../../components/BonusesModal";
@@ -97,7 +96,6 @@ const Rewards = ({ showMessageModalAction }) => {
         bonus={userData.bonus}
         toggleShowModal={toggleShowModal}
       />
-      <Styles />
     </>
   );
 };
