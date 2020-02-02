@@ -1,8 +1,17 @@
 header {
-  margin: 35px;
+  padding: 35px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 1200px){
+    padding: 20px;
+  }
+  @media screen and (max-width: 768px){
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
 }
 .logo-wrap {
   display: flex;
@@ -13,13 +22,34 @@ header {
   cursor: pointer;
   opacity: 1;
   transition: all 0.5s;
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 }
 .logo:hover {
   opacity: 0.3;
 }
+
+.mini-logo-btn {
+  display: none;
+  @media screen and (max-width: 768px){
+    display: block;
+  }
+}
+
+.mini-logo {
+  width: 60px;
+}
+
 .header-title {
-  margin-left: 248px;
+  margin-left: 267px;
   user-select: none;
+  @media screen and (max-width: 1200px){
+    margin-left: 150px;
+  }
+  @media screen and (max-width: 1200px){
+    display: none;
+  }
 }
 .header-links {
   width: 70px;
@@ -29,7 +59,59 @@ header {
 .header-link {
   color: black;
   text-decoration: none;
+  @media screen and (max-width: 768px){
+    color: #FFFFFF;
+  }
 }
 .header-link:hover {
   text-decoration: underline;
+}
+
+// MobileNavBar
+
+.menuBar {
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 200px;
+  height: calc(100vh - 40px);
+  padding: 25px 10px 0px 25px;
+  border: 2px solid black;
+  background-color: white;
+  transition: 0.3s;
+  &.open {
+    left: 0;
+    transition: 0.3s;
+  }
+  .wrapperInfoMenuBar {
+    display: flex;
+    flex-direction: column;
+    #logo-mini-black {
+      cursor: pointer;
+      width: 50px;
+      height: 30px;
+      margin-top: 10px;
+
+    }
+    #menu-item {
+      margin-top: 30px;
+      margin-left: 3px;
+      color: black;
+      font-size: 25px;
+      text-decoration: none;
+    }
+  }
+
+  #closeMenuBar {
+    cursor: pointer;
+    font-size: 30px;
+    transform: rotate(45deg);
+    outline: 0;
+    border: 0;
+    background: transparent;
+  }
 }

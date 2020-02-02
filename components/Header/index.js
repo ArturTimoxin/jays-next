@@ -1,21 +1,27 @@
-import React from "react";
-import Logo from '../../assets/img/jays-logo-black.png'
+import React, { useState } from "react";
+import Logo from "../../assets/img/jays-logo-black.png";
 import Link from "next/link";
+import MiniLogoBtn from "./MiniLogoBtn";
+import MobileNavBar from "./MobileNavBar";
+const linksInfo = [
+  { link: "/locations", name: "Локації" },
+  { link: "/rewards", name: "Rewards" },
+  { link: "/contact", name: "Контакт" }
+];
 
 const Header = () => {
+  const [isShowMobileNavBar, setShowMobileNavBar] = useState(false);
+
   return (
     <>
       <header>
         <div className="logo-wrap">
-          <Link passHref href='/'>
+          <Link passHref href="/">
             <a>
-              <img
-                className="logo"
-                src={Logo}
-                alt="logo"
-              />
+              <img className="logo" src={Logo} alt="logo" />
             </a>
           </Link>
+          <MiniLogoBtn showMobileNavBar={() => setShowMobileNavBar(true)} />
           <span className="header-title">JAYS : COFFEE BREWERS</span>
         </div>
         <span className="header-links">
@@ -33,6 +39,11 @@ const Header = () => {
           </a>
         </span>
       </header>
+      <MobileNavBar 
+        isShowMenu={isShowMobileNavBar}
+        closeMenu={() => setShowMobileNavBar(false)}
+        linksInfo={linksInfo}
+      />
     </>
   );
 };

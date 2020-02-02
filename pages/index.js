@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import LogoAndTitleMobileImg from '../assets/img/logo-and-title-white-300.png'
 
 const slides = [
   {
@@ -37,6 +38,11 @@ const HomePage = () => {
           )
         })}
       </Carousel>
+      <img
+        className="logo-and-title-mobile"
+        src={LogoAndTitleMobileImg}
+        alt="logo"
+      />
     </div>
   );
 };
