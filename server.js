@@ -19,7 +19,7 @@ app
     
     server.listen(process.env.PORT, err => {
       if (err) throw err;
-      console.log('> Ready on http://localhost:3003');
+      console.log('> Next server ready on 3003 port');
     });
   })
   .catch(ex => {
