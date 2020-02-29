@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { TOGGLE_LOCATIONS_MENU } from "../../constants";
 import { getLocationsAndSetMap, getLocations } from "../../actions/locations";
-import LocationItem from "../../components/LocationItem";
 class Locations extends Component {
   componentDidMount() {
     this.props.getLocationsAndSetMap(this.map);
@@ -24,22 +23,6 @@ class Locations extends Component {
               this.map = node;
             }}
           />
-        </div>
-        <div className="wrapperLocationsItems">
-          <h2 className="titleLocation">JAYS POINTS</h2>
-          <div className="locationsItems">
-            {points.map(elem => (
-              <LocationItem
-                key={elem._id}
-                id={elem._id}
-                imageURL={elem.imageURL}
-                pointName={elem.pointName}
-              />
-            ))}
-            {points.length % 2 && (
-              <div className='location-empty-block-for-wrap'/>
-            )}
-          </div>
         </div>
       </div>
     );

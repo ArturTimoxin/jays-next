@@ -1,5 +1,7 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import { setShowMobileNavBar } from '../actions/app';
+import { connect } from "react-redux";
 import LogoAndTitleMobileImg from '../assets/img/logo-and-title-white-300.png'
 
 const slides = [
@@ -17,7 +19,7 @@ const slides = [
   },
 ]
 
-const HomePage = () => {
+const HomePage = ({ setShowMobileNavBarAction }) => {
   return (
     <div className='wrap-carousel'>
       <Carousel
@@ -42,9 +44,16 @@ const HomePage = () => {
         className="logo-and-title-mobile"
         src={LogoAndTitleMobileImg}
         alt="logo"
+        onClick={() => setShowMobileNavBarAction(true)}
       />
     </div>
   );
 };
 
-export default HomePage;
+const mapDispatchToProps = dispatch => {
+  return {
+    setShowMobileNavBarAction: (state) => dispatch(setShowMobileNavBar(state))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(HomePage);

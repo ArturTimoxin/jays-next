@@ -4,6 +4,7 @@ module.exports = withSass(withImages({
     env: {
         API_URL: 'http://localhost:3001/',
         PORT: 3000,
-        ADMIN_EMAIL: 'timoxin.artur@gmail.com',
+        ADMIN_EMAIL: 'mail@jays.coffee',
+        GOOGLE_MAPS_API_KEY: 'AIzaSyBXznfCqQJRI20mRwsjC5XGtLzUQHPadGo'
     },
 }));

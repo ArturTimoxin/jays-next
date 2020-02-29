@@ -1,4 +1,3 @@
-import Router from 'next/router'
 import API from "../utils/api";
 import { SET_LOCATIONS, SET_MAP } from "../constants";
 import { MapStyle, google } from "../constants/MapStyle";
@@ -47,16 +46,13 @@ function setGoogleMap(mapRef, points) {
   map.mapTypes.set("styled_map", styledMapType);
   map.setMapTypeId("styled_map");
   points.forEach(point => {
-    const marker = new google.maps.Marker({
+    new google.maps.Marker({
       map: map,
       position: { lat: point.lat, lng: point.lng },
       animation: google.maps.Animation.DROP,
       title: point.name,
       icon: MapMarker,
     });
-    google.maps.event.addListener(marker, 'click', function () {
-      Router.push(`/point/${point._id}`);
-    });
   });
   return map;
 }

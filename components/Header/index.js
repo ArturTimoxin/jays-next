@@ -4,6 +4,8 @@ import Link from "next/link";
 import MiniLogoBtn from "./MiniLogoBtn";
 import MobileNavBar from "./MobileNavBar";
 import { withRouter } from "next/router";
+import { connect } from "react-redux";
+import { setShowMobileNavBar } from '../../actions/app';
 
 const linksInfo = [
   { link: "/locations", name: "Локації" },
@@ -11,8 +13,7 @@ const linksInfo = [
   { link: "/contact", name: "Контакт" }
 ];
 
-const Header = ({ router }) => {
-  const [isShowMobileNavBar, setShowMobileNavBar] = useState(false);
+const Header = ({ router, isShowMobileNavBar, setShowMobileNavBarAction }) => {
   const isMainPage = router.route === '/';
   
   return (
@@ -24,7 +25,7 @@ const Header = ({ router }) => {
               <img className="logo" src={Logo} alt="logo" />
             </a>
           </Link>
-          <MiniLogoBtn showMobileNavBar={() => setShowMobileNavBar(true)} />
+          <MiniLogoBtn showMobileNavBar={() => setShowMobileNavBarAction(true)} />
           <span className="header-title">JAYS : COFFEE BREWERS</span>
         </div>
         <span className={`header-links ${isMainPage ? '' : 'black-links'}`}>
@@ -44,11 +45,21 @@ const Header = ({ router }) => {
       </header>
       <MobileNavBar 
         isShowMenu={isShowMobileNavBar}
-        closeMenu={() => setShowMobileNavBar(false)}
+        closeMenu={() => setShowMobileNavBarAction(false)}
         linksInfo={linksInfo}
       />
     </>
   );
 };
 
-export default withRouter(Header);
+const mapStateToProps = store => ({
+  isShowMobileNavBar: store.app.isShowMobileNavBar,
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setShowMobileNavBarAction: (state) => dispatch(setShowMobileNavBar(state))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header));
