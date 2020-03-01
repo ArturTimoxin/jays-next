@@ -3,7 +3,10 @@ import { store } from "../store";
 import { showMessageModal } from "../actions/messageModal";
 
 const API = axios.create({
-  baseURL: process.env.API_URL
+  baseURL: process.env.API_URL,
+  headers: {
+	'Access-Control-Allow-Origin': '*',
+  },
 });
 
 API.interceptors.response.use(

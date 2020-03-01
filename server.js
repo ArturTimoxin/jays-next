@@ -19,7 +19,7 @@ app
     
     server.listen(process.env.PORT, err => {
       if (err) throw err;
-      console.log('> Next server ready on 3003 port');
+      console.log(`> Next server ready on ${process.env.PORT} port`);
     });
   })
   .catch(ex => {

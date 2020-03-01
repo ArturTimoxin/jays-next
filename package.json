@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "start": "node server.js",
     "build": "NODE_ENV=production next build && next export",
-    "start": "NODE_ENV=production next start",
+    "dev": "NODE_ENV=production next start",
     "next": "next"
   },
   "keywords": [],
