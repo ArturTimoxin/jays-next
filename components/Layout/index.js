@@ -11,7 +11,7 @@ const Layout = ({
   children,
   closeMessageModalAction,
   isShowMessageModal,
-  titleMessageeModal,
+  titleMessageModal,
   textMessageModal,
   router,
 }) => {
@@ -53,7 +53,7 @@ const Layout = ({
         </div>
       </div>
       <MessageModal
-        title={titleMessageeModal}
+        title={titleMessageModal}
         message={textMessageModal}
         isShow={isShowMessageModal}
         closeModal={closeMessageModalAction}
@@ -64,7 +64,7 @@ const Layout = ({
 
 const mapStateToProps = store => ({
   isShowMessageModal: store.messageModal.isShow,
-  titleMessageeModal: store.messageModal.title,
+  titleMessageModal: store.messageModal.title,
   textMessageModal: store.messageModal.message
 });
 

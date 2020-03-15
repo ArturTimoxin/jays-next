@@ -22,6 +22,7 @@
   flex-direction: column;
   padding: 10px 30px 30px 20px;
   background-color: white;
+  overflow-x: hidden;
   @media screen and (max-width: 768px) {
     max-width: 90%;
   }

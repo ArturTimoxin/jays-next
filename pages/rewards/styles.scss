@@ -81,3 +81,13 @@
     text-align: center;
   }
 }
+
+.bonusConditions-link {
+  font-size: 20px;
+  color: #007bff;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    text-decoration: underline;
+  }
+}

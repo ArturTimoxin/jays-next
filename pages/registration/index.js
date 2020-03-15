@@ -5,6 +5,7 @@ import { maskPhone } from "../../constants/InputMasks";
 import API from "../../utils/api";
 import { connect } from "react-redux";
 import { showMessageModal } from "../../actions/messageModal";
+import bonusConditions from '../../constants/bonusConditions';
 
 const successRegistrationMessage = 
 `<div>Ви з'явитеся в бонусній системі після перевірки заявки адміністратором. Зазвичай ми перевіряємо заявки протягом 24 годин. Після проходження реєстрації ви будете сповіщені повідомленням на електронну пошту. <br /><br />
@@ -143,6 +144,12 @@ const Registration = ({ showMessageModalAction }) => {
               Отримати баланс бонусів за номером телефону
             </a>
           </Link>
+          <div 
+            className='bonusConditions-link'
+            onClick={() => showMessageModalAction({ title: 'Умови участі у бонусній програмі Jays : Rewards', message: bonusConditions })}
+          >
+              Умови участі
+          </div>
         </form>
       </div>
     </>

@@ -6,6 +6,7 @@ import BonusesModal from "../../components/BonusesModal";
 import API from "../../utils/api";
 import { connect } from "react-redux";
 import { showMessageModal } from "../../actions/messageModal";
+import bonusConditions from '../../constants/bonusConditions';
 
 const Rewards = ({ showMessageModalAction }) => {
   const [phone, setPhone] = useState("");
@@ -87,6 +88,12 @@ const Rewards = ({ showMessageModalAction }) => {
               Зареєструватися в бонусній системі
             </a>
           </Link>
+          <div 
+            className='bonusConditions-link'
+            onClick={() => showMessageModalAction({ title: 'Умови участі у бонусній програмі Jays : Rewards', message: bonusConditions })}
+          >
+              Умови участі
+          </div>
         </form>
       </div>
       <BonusesModal
