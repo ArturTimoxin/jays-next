@@ -1,6 +1,6 @@
 import React from "react";
-import MiniWhiteLogoBtnImg from "../../assets/img/mobile-white-menu-logo.png";
-import MiniBlackLogoBtnImg from "../../assets/img/mobile-black-menu-logo.png";
+import MiniWhiteLogoBtnImg from "../../assets/img/burger-white.png";
+import MiniBlackLogoBtnImg from "../../assets/img/burger-black.png";
 import { withRouter } from "next/router";
 
 const MiniLogoBtn = ({ showMobileNavBar, router }) => {

@@ -33,17 +33,32 @@
   width: 100%;
   height: 100%;
 }
-.carousel-item div {
+
+.slide-img {
+  width: 100%;
   height: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
 }
-.logo-and-title-mobile {
+
+.logo-mobile {
   position: absolute;
+  bottom: 10px;
+  right: 10px;
   display: none;
-  margin: auto;
+  width: 45px;
+  @media screen and (max-width: 768px){
+    display: block;
+  }
+}
+
+.desctop-slider {
+  display: block;
+  @media screen and (max-width: 768px){
+    display: none;
+  }
+}
+
+.mobile-slider {
+  display: none; 
   @media screen and (max-width: 768px){
     display: block;
   }

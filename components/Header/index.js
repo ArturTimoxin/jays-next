@@ -37,9 +37,15 @@ const Header = ({ router, isShowMobileNavBar, setShowMobileNavBarAction }) => {
           </a>
           <a
             className="header-link"
-            href="https://www.instagram.com/explore/locations/2102254823147526/jays-coffee-brewers/"
+            href="https://www.instagram.com/jayscoffeebrewers/"
           >
             INST
+          </a>
+          <a
+            className="header-link"
+            href="http://t.me/jayscoffeebrewers"
+          >
+            TLGRM
           </a>
         </span>
       </header>

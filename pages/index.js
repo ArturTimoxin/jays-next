@@ -2,24 +2,34 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import { setShowMobileNavBar } from '../actions/app';
 import { connect } from "react-redux";
-import LogoAndTitleMobileImg from '../assets/img/logo-and-title-white-300.png'
+import LogoMobile from '../assets/img/jays-logo-white.png'
 
 const slides = [
   {
-    img: '/img/main-page/2_1920.jpg',
+    img: `${process.env.API_URL}main-page/web01.jpg`,
   },
   {
-    img: '/img/main-page/3_1920.jpg',
+    img: `${process.env.API_URL}main-page/web02.jpg`,
   },
   {
-    img: '/img/main-page/4_1920.jpg',
+    img: `${process.env.API_URL}main-page/web03.jpg`,
   },
   {
-    img: '/img/main-page/1_1920.jpg',
+    img: `${process.env.API_URL}main-page/web04.jpg`,
+  },
+]
+
+const mobileSlides = [
+  {
+    img: `${process.env.API_URL}main-page/webmobile01.jpg`,
+  },
+  {
+    img: `${process.env.API_URL}main-page/webmobile02.jpg`,
   },
 ]
 
 const HomePage = ({ setShowMobileNavBarAction }) => {
+
   return (
     <div className='wrap-carousel'>
       <Carousel
@@ -27,22 +37,44 @@ const HomePage = ({ setShowMobileNavBarAction }) => {
         indicators={false}
         interval={3000}
         pauseOnHover={false}
+        className='desctop-slider'
       >
         {slides.map(slide => {
           return (
-            <Carousel.Item>
-              <div
-                style={{
-                  backgroundImage: `url(${slide.img})`
-                }}
+            <Carousel.Item
+              key={slide.img}
+            >
+              <img 
+                className='slide-img'
+                src={slide.img}
+              />
+            </Carousel.Item>
+          )
+        })}
+      </Carousel>
+      <Carousel
+        controls={false}
+        indicators={false}
+        interval={3000}
+        pauseOnHover={false}
+        className='mobile-slider'
+      >
+        {mobileSlides.map(slide => {
+          return (
+            <Carousel.Item
+              key={slide.img}
+            >
+              <img 
+                className='slide-img'
+                src={slide.img}
               />
             </Carousel.Item>
           )
         })}
       </Carousel>
       <img
-        className="logo-and-title-mobile"
-        src={LogoAndTitleMobileImg}
+        className="logo-mobile"
+        src={LogoMobile}
         alt="logo"
         onClick={() => setShowMobileNavBarAction(true)}
       />

@@ -1,21 +1,39 @@
 import React, { useState } from "react";
+import Select from '../../components/Select';
 import API from "../../utils/api";
+
+const selectOptions = [
+  {
+    name: 'Робота'
+  },
+  {
+    name: 'Cпівробітництво'
+  },
+  {
+    name: 'Захід'
+  },
+  {
+    name: 'Інше'
+  },
+]
 
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [theme, setTheme] = useState(selectOptions[0].name);
   const [sendResult, setSendResult] = useState("");
   const [isLoading, setLoading] = useState(false);
 
   const sendMessage = e => {
     e.preventDefault();
     setLoading(true);
-    API.post("/message", { name, email, message })
+    API.post("/message", { name, email, message, theme })
       .then(res => {
         setSendResult("Повідомлення успішно відправлено.");
         setName("");
         setEmail("");
+        setTheme(selectOptions[0].name);
         setMessage("");
         setLoading(false);
       })
@@ -54,6 +72,14 @@ const Contact = () => {
               value={email}
               required
               onChange={e => setEmail(e.target.value)}
+            />
+            <label className="contact-form-label" htmlFor="select">
+              Тема повідомлення:
+            </label>
+            <Select 
+              options={selectOptions}
+              value={theme}
+              onChange={e => setTheme(e.target.value)}
             />
             <label className="contact-form-label" htmlFor="message">
               Ваше повідомлення:
