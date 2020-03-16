@@ -6,25 +6,25 @@ import LogoMobile from '../assets/img/jays-logo-white.png'
 
 const slides = [
   {
-    img: `${process.env.API_URL}main-page/web01.jpg`,
+    img: `${process.env.API_URL}main-page/web1.jpg`,
   },
   {
-    img: `${process.env.API_URL}main-page/web02.jpg`,
+    img: `${process.env.API_URL}main-page/web2.jpg`,
   },
   {
-    img: `${process.env.API_URL}main-page/web03.jpg`,
+    img: `${process.env.API_URL}main-page/web3.jpg`,
   },
   {
-    img: `${process.env.API_URL}main-page/web04.jpg`,
+    img: `${process.env.API_URL}main-page/web4.jpg`,
   },
 ]
 
 const mobileSlides = [
   {
-    img: `${process.env.API_URL}main-page/webmobile01.jpg`,
+    img: `${process.env.API_URL}main-page/webmobile1.jpg`,
   },
   {
-    img: `${process.env.API_URL}main-page/webmobile02.jpg`,
+    img: `${process.env.API_URL}main-page/webmobile2.jpg`,
   },
 ]
 
@@ -44,9 +44,11 @@ const HomePage = ({ setShowMobileNavBarAction }) => {
             <Carousel.Item
               key={slide.img}
             >
-              <img 
+              <div
                 className='slide-img'
-                src={slide.img}
+                style={{
+                  backgroundImage: `url(${slide.img})`
+                }}
               />
             </Carousel.Item>
           )
@@ -64,9 +66,11 @@ const HomePage = ({ setShowMobileNavBarAction }) => {
             <Carousel.Item
               key={slide.img}
             >
-              <img 
+              <div
                 className='slide-img'
-                src={slide.img}
+                style={{
+                  backgroundImage: `url(${slide.img})`
+                }}
               />
             </Carousel.Item>
           )
