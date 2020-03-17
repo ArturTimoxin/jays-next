@@ -1,19 +1,30 @@
-import React from 'react';
+import React from "react";
 import Link from "next/link";
 
+export const linksInfo = [
+  { link: "/locations", name: "Локації" },
+  { link: "/rewards", name: "Rewards" },
+  { link: "https://jayscoffeebrewers.postershop.me/", name: "Магазин" },
+  { link: "/contact", name: "Контакт" },
+];
+
 const NavBar = () => {
-    return (
-        <>
-            <aside>
-                <nav>
-                    <Link passHref href='/locations'><a className='nav-link link-first'>Локації</a></Link>
-                    <Link passHref href='/rewards'><a className='nav-link'>Rewards</a></Link>
-                    <Link passHref href='/contact'><a className='nav-link'>Контакт</a></Link>
-                </nav>
-                <div className='rights-text'>@ 2020 All rights reserved</div>
-            </aside>
-        </>
-    )
-}
+  return (
+    <>
+      <aside>
+        <nav>
+          {linksInfo.map(linkInfo => {
+            return (
+              <Link passHref href={linkInfo.link}>
+                <a className="nav-link link-first">{linkInfo.name}</a>
+              </Link>
+            );
+          })}
+        </nav>
+        <div className="rights-text">@ 2020 All rights reserved</div>
+      </aside>
+    </>
+  );
+};
 
 export default NavBar;

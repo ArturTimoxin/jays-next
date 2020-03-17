@@ -1,8 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import logoMiniBlack from "../../assets/img/jays-logo-mini-black.png";
+import { linksInfo } from './index';
 
-const MobileNavBar = ({ isShowMenu = false, closeMenu, linksInfo = [] }) => {
+const MobileNavBar = ({ isShowMenu = false, closeMenu }) => {
   return (
     <div className={`menuBar ${isShowMenu ? "open" : ""}`}>
       <div className="wrapperInfoMenuBar">

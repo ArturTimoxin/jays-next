@@ -2,16 +2,10 @@ import React, { useState } from "react";
 import Logo from "../../assets/img/jays-logo-black.png";
 import Link from "next/link";
 import MiniLogoBtn from "./MiniLogoBtn";
-import MobileNavBar from "./MobileNavBar";
+import MobileNavBar from "../NavBar/MobileNavBar";
 import { withRouter } from "next/router";
 import { connect } from "react-redux";
 import { setShowMobileNavBar } from '../../actions/app';
-
-const linksInfo = [
-  { link: "/locations", name: "Локації" },
-  { link: "/rewards", name: "Rewards" },
-  { link: "/contact", name: "Контакт" }
-];
 
 const Header = ({ router, isShowMobileNavBar, setShowMobileNavBarAction }) => {
   const isMainPage = router.route === '/';
@@ -52,7 +46,6 @@ const Header = ({ router, isShowMobileNavBar, setShowMobileNavBarAction }) => {
       <MobileNavBar 
         isShowMenu={isShowMobileNavBar}
         closeMenu={() => setShowMobileNavBarAction(false)}
-        linksInfo={linksInfo}
       />
     </>
   );
