@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 
 export const linksInfo = [
+  { link: "https://jayscoffeebrewers.postershop.me/", name: "Магазин" },
   { link: "/locations", name: "Локації" },
   { link: "/rewards", name: "Rewards" },
-  { link: "https://jayscoffeebrewers.postershop.me/", name: "Магазин" },
   { link: "/contact", name: "Контакт" },
 ];
 
